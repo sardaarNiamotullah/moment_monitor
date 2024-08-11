@@ -1,5 +1,5 @@
-const startDate = new Date("2024-08-10T00:00:00");
-const endDate = new Date("2024-08-31T23:59:00");
+const startDate = new Date("2024-08-12T00:00:00");
+const endDate = new Date("2024-08-25T23:59:00");
 
 function pad(num, size) {
   let s = "0".repeat(size) + num;
