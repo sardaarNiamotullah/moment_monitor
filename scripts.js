@@ -1,4 +1,4 @@
-const startDate = new Date("2024-08-12T00:00:00");
+const startDate = new Date("2024-08-15T00:00:00");
 const endDate = new Date("2024-08-25T23:59:00");
 
 function pad(num, size) {
@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateStopwatch() {
     const currentTime = new Date().getTime();
-    const elapsed = currentTime - startDate.getTime();
+    let elapsed = currentTime - startDate.getTime();
+    if (elapsed < 0) {
+      elapsed = - elapsed;
+    }
     const formattedTime = formatTime(elapsed);
 
     updateFlipUnit(daysUnit, formattedTime.days, 3); // Days field with 3 digits
@@ -107,7 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function count_updateStopwatch() {
     const count_currentTime = new Date().getTime();
-    const elapses = - (count_currentTime - endDate.getTime());
+    let elapses = count_currentTime - endDate.getTime();
+    if (elapses < 0) {
+      elapses = - elapses;
+    }
     const formattedTimeCount = formatTimeCount(elapses);
 
     updateFlipUnit(count_hoursUnit, formattedTimeCount.hours, 4); // Hours field with 4 digits
